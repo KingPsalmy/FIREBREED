@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>FIREBREED — Analytics</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <div class="dashboard">
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+            <img src="images/logo.png" alt="Firebreed Logo" class="logo">
+            <nav class="sidebar-nav">
+                <a href="dashboard.html">Dashboard</a>
+                <a href="#">My Music</a>
+                <a href="upload.html">Upload</a>
+                <a href="analytics.html" class="active">Analytics</a>
+                <a href="#">Royalties</a>
+                <a href="#">Profile</a>
+            </nav>
+            <a href="index.html" class="logout">Log Out</a>
+        </aside>
+
+        <!-- MAIN CONTENT -->
+        <main class="main-content">
+
+            <div class="dashboard-header">
+                <h1>Analytics 📊</h1>
+                <p>See how your music is performing across all platforms</p>
+            </div>
+
+            <!-- STATS -->
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <p class="stat-label">Total Streams</p>
+                    <p class="stat-number">24,581</p>
+                </div>
+                <div class="stat-card">
+                    <p class="stat-label">This Month</p>
+                    <p class="stat-number">3,842</p>
+                </div>
+                <div class="stat-card">
+                    <p class="stat-label">Listeners</p>
+                    <p class="stat-number">12,204</p>
+                </div>
+                <div class="stat-card">
+                    <p class="stat-label">Countries</p>
+                    <p class="stat-number">28</p>
+                </div>
+            </div>
+
+            <div class="analytics-grid">
+
+                <!-- STREAMS BY PLATFORM -->
+                <div class="analytics-card">
+                    <h2>Streams by Platform</h2>
+                    <div class="platform-stats">
+                        <div class="platform-stat">
+                            <div class="platform-info">
+                                <p class="platform-name">Spotify</p>
+                                <p class="platform-number">14,204</p>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress" style="width: 78%"></div>
+                            </div>
+                        </div>
+                        <div class="platform-stat">
+                            <div class="platform-info">
+                                <p class="platform-name">Apple Music</p>
+                                <p class="platform-number">5,431</p>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress" style="width: 45%"></div>
+                            </div>
+                        </div>
+                        <div class="platform-stat">
+                            <div class="platform-info">
+                                <p class="platform-name">YouTube Music</p>
+                                <p class="platform-number">3,102</p>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress" style="width: 30%"></div>
+                            </div>
+                        </div>
+                        <div class="platform-stat">
+                            <div class="platform-info">
+                                <p class="platform-name">Tidal</p>
+                                <p class="platform-number">1,210</p>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress" style="width: 15%"></div>
+                            </div>
+                        </div>
+                        <div class="platform-stat">
+                            <div class="platform-info">
+                                <p class="platform-name">Deezer</p>
+                                <p class="platform-number">634</p>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress" style="width: 8%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TOP COUNTRIES -->
+                <div class="analytics-card">
+                    <h2>Top Countries</h2>
+                    <div class="country-stats">
+                        <div class="country-stat">
+                            <p class="country-name">🇳🇬 Nigeria</p>
+                            <p class="country-number">8,204</p>
+                        </div>
+                        <div class="country-stat">
+                            <p class="country-name">🇺🇸 United States</p>
+                            <p class="country-number">5,431</p>
+                        </div>
+                        <div class="country-stat">
+                            <p class="country-name">🇬🇧 United Kingdom</p>
+                            <p class="country-number">3,102</p>
+                        </div>
+                        <div class="country-stat">
+                            <p class="country-name">🇨🇦 Canada</p>
+                            <p class="country-number">2,011</p>
+                        </div>
+                        <div class="country-stat">
+                            <p class="country-name">🇿🇦 South Africa</p>
+                            <p class="country-number">1,840</p>
+                        </div>
+                        <div class="country-stat">
+                            <p class="country-name">🇬🇭 Ghana</p>
+                            <p class="country-number">1,204</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TOP TRACKS -->
+                <div class="analytics-card full-width">
+                    <h2>Top Tracks</h2>
+                    <div class="releases">
+                        <div class="release-item">
+                            <div class="release-art">🎵</div>
+                            <div class="release-info">
+                                <p class="release-title">Track One</p>
+                                <p class="release-meta">Single • Jan 2026</p>
+                            </div>
+                            <div class="release-streams">8,204 streams</div>
