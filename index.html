@@ -20,7 +20,7 @@
     <section class="hero">
         <h1>Spread Like Wildfire.</h1>
         <p>Distribute your music to 150+ platforms and keep 100% of your royalties.</p>
-        <a href="#">Start For Free</a>
+        <a href="signup.html">Start For Free</a>
     </section>
 
     <section class="features" id="features">
@@ -52,7 +52,7 @@
                     <li>All major platforms</li>
                     <li>Basic analytics</li>
                 </ul>
-                <a href="#">Get Started</a>
+                <button class="plan-btn" id="free-plan">Get Started</button>
             </div>
             <div class="plan featured-plan">
                 <h3>Artist</h3>
@@ -63,7 +63,7 @@
                     <li>Full analytics</li>
                     <li>Instant payouts</li>
                 </ul>
-                <a href="#">Start Free Trial</a>
+                <button class="plan-btn featured-btn" id="artist-plan">Start Free Trial</button>
             </div>
             <div class="plan">
                 <h3>Label</h3>
@@ -74,7 +74,7 @@
                     <li>Royalty splitting</li>
                     <li>Priority support</li>
                 </ul>
-                <a href="#">Get Label Plan</a>
+                <button class="plan-btn" id="label-plan">Get Label Plan</button>
             </div>
         </div>
     </section>
@@ -89,6 +89,8 @@
         <p class="copyright">© 2026 Firebreed. All rights reserved.</p>
     </footer>
 
-    <script src="js/main.js"></script>
+    <script src="js/config.js"></script>
+    <script src="https://js.stripe.com/v3/"></script>
+    <script type="module" src="js/main.js"></script>
 </body>
 </html>
