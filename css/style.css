@@ -1,3 +1,7 @@
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     margin: 0;
     background-color: #080808;
@@ -7,10 +11,15 @@ body {
 
 nav {
     background-color: #111111;
-    padding: 20px;
+    padding: 15px 40px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+.logo {
+    height: 80px;
+    width: auto;
 }
 
 nav ul {
@@ -25,6 +34,7 @@ nav ul a {
     color: white;
     text-decoration: none;
     transition: color 0.3s;
+    font-size: 16px;
 }
 
 nav ul a:hover {
