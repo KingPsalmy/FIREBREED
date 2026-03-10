@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>FIREBREED — Royalties</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <div class="dashboard">
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+            <img src="images/logo.png" alt="Firebreed Logo" class="logo">
+            <nav class="sidebar-nav">
+                <a href="dashboard.html">Dashboard</a>
+                <a href="#">My Music</a>
+                <a href="upload.html">Upload</a>
+                <a href="analytics.html">Analytics</a>
+                <a href="royalties.html" class="active">Royalties</a>
+                <a href="#">Profile</a>
+            </nav>
+            <a href="index.html" class="logout">Log Out</a>
+        </aside>
+
+        <!-- MAIN CONTENT -->
+        <main class="main-content">
+
+            <div class="dashboard-header">
+                <h1>Royalties 💰</h1>
+                <p>Track your earnings and request payouts</p>
+            </div>
+
+            <!-- EARNINGS OVERVIEW -->
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <p class="stat-label">Total Earned</p>
+                    <p class="stat-number">$142.30</p>
+                </div>
+                <div class="stat-card">
+                    <p class="stat-label">This Month</p>
+                    <p class="stat-number">$38.50</p>
+                </div>
+                <div class="stat-card">
+                    <p class="stat-label">Pending</p>
+                    <p class="stat-number">$24.10</p>
+                </div>
+                <div class="stat-card">
+                    <p class="stat-label">Withdrawn</p>
+                    <p class="stat-number">$80.00</p>
+                </div>
+            </div>
+
+            <!-- PAYOUT SECTION -->
+            <div class="royalties-grid">
+
+                <div class="analytics-card">
+                    <h2>Request Payout</h2>
+                    <div class="payout-balance">
+                        <p class="payout-label">Available Balance</p>
+                        <p class="payout-amount">$62.30</p>
+                    </div>
+                    <div class="form-group">
+                        <label>Payout Method</label>
+                        <select>
+                            <option>PayPal</option>
+                            <option>Bank Transfer</option>
+                            <option>Payoneer</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Amount</label>
+                        <input type="number" placeholder="Enter amount">
+                    </div>
+                    <button class="submit-btn">Request Payout</button>
+                </div>
+
+                <!-- EARNINGS BY PLATFORM -->
+                <div class="analytics-card">
+                    <h2>Earnings by Platform</h2>
+                    <div class="platform-stats">
+                        <div class="platform-stat">
+                            <div class="platform-info">
+                                <p class="platform-name">Spotify</p>
+                                <p class="platform-number">$78.20</p>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress" style="width: 78%"></div>
+                            </div>
+                        </div>
+                        <div class="platform-stat">
+                            <div class="platform-info">
+                                <p class="platform-name">Apple Music</p>
+                                <p class="platform-number">$32.40</p>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress" style="width: 45%"></div>
+                            </div>
+                        </div>
+                        <div class="platform-stat">
+                            <div class="platform-info">
+                                <p class="platform-name">YouTube Music</p>
+                                <p class="platform-number">$18.10</p>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress" style="width: 30%"></div>
+                            </div>
+                        </div>
+                        <div class="platform-stat">
+                            <div class="platform-info">
+                                <p class="platform-name">Tidal</p>
+                                <p class="platform-number">$8.60</p>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress" style="width: 15%"></div>
+                            </div>
+                        </div>
+                        <div class="platform-stat">
+                            <div class="platform-info">
+                                <p class="platform-name">Deezer</p>
+                                <p class="platform-number">$5.00</p>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress" style="width: 8%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TRANSACTION HISTORY -->
+                <div class="analytics-card full-width">
+                    <h2>Transaction History</h2>
+                    <div class="transactions">
+                        <div class="transaction-item">
+                            <div class="transaction-info">
+                                <p class="transaction-title">Payout — PayPal</p>
+                                <p class="transaction-date">Feb 15, 2026</p>
+                            </div>
+                            <p class="transaction-amount negative">-$50.00</p>
+                        </div>
+                        <div class="transaction-item">
+                            <div class="transaction-info">
+                                <p class="transaction-title">Spotify Royalties</p>
+                                <p class="transaction-date">Feb 01, 2026</p>
+                            </div>
+                            <p class="transaction-amount positive">+$38.20</p>
+                        </div>
+                        <div class="transaction-item">
+                            <div class="transaction-info">
+                                <p class="transaction-title">Apple Music Royalties</p>
+                                <p class="transaction-date">Feb 01, 2026</p>
+                            </div>
+                            <p class="transaction-amount positive">+$18.40</p>
+                        </div>
+                        <div class="transaction-item">
+                            <div class="transaction-info">
+                                <p class="transaction-title">Payout — PayPal</p>
+                                <p class="transaction-date">Jan 15, 2026</p>
+                            </div>
+                            <p class="transaction-amount negative">-$30.00</p>
+                        </div>
+                        <div class="transaction-item">
+                            <div class="transaction-info">
+                                <p class="transaction-title">Spotify Royalties</p>
+                                <p class="transaction-date">Jan 01, 2026</p>
+                            </div>
+                            <p class="transaction-amount positive">+$40.00</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
