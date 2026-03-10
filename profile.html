@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>FIREBREED — Profile</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <div class="dashboard">
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+            <img src="images/logo.png" alt="Firebreed Logo" class="logo">
+            <nav class="sidebar-nav">
+                <a href="dashboard.html">Dashboard</a>
+                <a href="#">My Music</a>
+                <a href="upload.html">Upload</a>
+                <a href="analytics.html">Analytics</a>
+                <a href="royalties.html">Royalties</a>
+                <a href="profile.html" class="active">Profile</a>
+            </nav>
+            <a href="index.html" class="logout">Log Out</a>
+        </aside>
+
+        <!-- MAIN CONTENT -->
+        <main class="main-content">
+
+            <div class="dashboard-header">
+                <h1>Your Profile 🎤</h1>
+                <p>Manage your artist information</p>
+            </div>
+
+            <div class="profile-grid">
+
+                <!-- PROFILE CARD -->
+                <div class="analytics-card profile-card">
+                    <div class="profile-avatar">
+                        <div class="avatar-placeholder">🎤</div>
+                        <button class="change-photo-btn">Change Photo</button>
+                    </div>
+                    <p class="profile-name">Artist Name</p>
+                    <p class="profile-email">artist@email.com</p>
+                    <div class="profile-stats">
+                        <div class="profile-stat">
+                            <p class="stat-number">3</p>
+                            <p class="stat-label">Releases</p>
+                        </div>
+                        <div class="profile-stat">
+                            <p class="stat-number">24K</p>
+                            <p class="stat-label">Streams</p>
+                        </div>
+                        <div class="profile-stat">
+                            <p class="stat-number">28</p>
+                            <p class="stat-label">Countries</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- EDIT PROFILE -->
+                <div class="analytics-card">
+                    <h2>Edit Profile</h2>
+                    <div class="form-group">
+                        <label>Artist Name</label>
+                        <input type="text" placeholder="Your artist name">
+                    </div>
+                    <div class="form-group">
+                        <label>Real Name</label>
+                        <input type="text" placeholder="Your real name">
+                    </div>
+                    <div class="form-group">
+                        <label>Email</label>
+                        <input type="email" placeholder="Your email address">
+                    </div>
+                    <div class="form-group">
+                        <label>Phone Number</label>
+                        <input type="tel" placeholder="Your phone number">
+                    </div>
+                    <div class="form-group">
+                        <label>Country</label>
+                        <select>
+                            <option>Nigeria</option>
+                            <option>United States</option>
+                            <option>United Kingdom</option>
+                            <option>Ghana</option>
+                            <option>South Africa</option>
+                            <option>Canada</option>
+                            <option>Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Bio</label>
+                        <textarea placeholder="Tell your fans about yourself..."></textarea>
+                    </div>
+                    <button class="submit-btn">Save Changes</button>
+                </div>
+
+                <!-- SOCIAL LINKS -->
+                <div class="analytics-card">
+                    <h2>Social Links</h2>
+                    <div class="form-group">
+                        <label>Spotify Artist Page</label>
+                        <input type="url" placeholder="https://open.spotify.com/artist/...">
+                    </div>
+                    <div class="form-group">
+                        <label>Apple Music Page</label>
+                        <input type="url" placeholder="https://music.apple.com/...">
+                    </div>
+                    <div class="form-group">
+                        <label>Instagram</label>
+                        <input type="url" placeholder="https://instagram.com/...">
+                    </div>
+                    <div class="form-group">
+                        <label>Twitter / X</label>
+                        <input type="url" placeholder="https://twitter.com/...">
+                    </div>
+                    <div class="form-group">
+                        <label>YouTube</label>
+                        <input type="url" placeholder="https://youtube.com/...">
+                    </div>
+                    <div class="form-group">
+                        <label>TikTok</label>
+                        <input type="url" placeholder="https://tiktok.com/...">
+                    </div>
+                    <button class="submit-btn">Save Links</button>
+                </div>
+
+                <!-- CHANGE PASSWORD -->
+                <div class="analytics-card">
+                    <h2>Change Password</h2>
+                    <div class="form-group">
+                        <label>Current Password</label>
+                        <input type="password" placeholder="Enter current password">
+                    </div>
+                    <div class="form-group">
+                        <label>New Password</label>
+                        <input type="password" placeholder="Enter new password">
+                    </div>
+                    <div class="form-group">
+                        <label>Confirm New Password</label>
+                        <input type="password" placeholder="Confirm new password">
+                    </div>
+                    <button class="submit-btn">Update Password</button>
+                </div>
+
+            </div>
+        </main>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
