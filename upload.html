@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>FIREBREED — Upload Music</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <div class="dashboard">
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+            <img src="images/logo.png" alt="Firebreed Logo" class="logo">
+            <nav class="sidebar-nav">
+                <a href="dashboard.html">Dashboard</a>
+                <a href="#">My Music</a>
+                <a href="upload.html" class="active">Upload</a>
+                <a href="#">Analytics</a>
+                <a href="#">Royalties</a>
+                <a href="#">Profile</a>
+            </nav>
+            <a href="index.html" class="logout">Log Out</a>
+        </aside>
+
+        <!-- MAIN CONTENT -->
+        <main class="main-content">
+
+            <div class="dashboard-header">
+                <h1>Upload Your Music 🎵</h1>
+                <p>Fill in the details below to distribute your release</p>
+            </div>
+
+            <div class="upload-form">
+
+                <!-- RELEASE INFO -->
+                <div class="form-section">
+                    <h2>Release Info</h2>
+                    <div class="form-group">
+                        <label>Release Title</label>
+                        <input type="text" placeholder="Enter your track or album title">
+                    </div>
+                    <div class="form-group">
+                        <label>Artist Name</label>
+                        <input type="text" placeholder="Your artist name">
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Release Type</label>
+                            <select>
+                                <option>Single</option>
+                                <option>EP</option>
+                                <option>Album</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Genre</label>
+                            <select>
+                                <option>Afrobeats</option>
+                                <option>Hip Hop</option>
+                                <option>R&B</option>
+                                <option>Pop</option>
+                                <option>Electronic</option>
+                                <option>Rock</option>
+                                <option>Jazz</option>
+                                <option>Other</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Release Date</label>
+                        <input type="date">
+                    </div>
+                </div>
+
+                <!-- ARTWORK -->
+                <div class="form-section">
+                    <h2>Artwork</h2>
+                    <div class="upload-box" id="artwork-box">
+                        <p>🖼️</p>
+                        <p>Drag and drop your artwork here</p>
+                        <p class="upload-hint">JPG or PNG • Minimum 3000x3000px</p>
+                        <input type="file" accept="image/*">
+                    </div>
+                </div>
+
+                <!-- AUDIO -->
+                <div class="form-section">
+                    <h2>Audio File</h2>
+                    <div class="upload-box" id="audio-box">
+                        <p>🎵</p>
+                        <p>Drag and drop your audio here</p>
+                        <p class="upload-hint">WAV or FLAC • Minimum 16-bit, 44.1kHz</p>
+                        <input type="file" accept="audio/*">
+                    </div>
+                </div>
+
+                <!-- CREDITS -->
+<div class="form-section">
+    <h2>Credits</h2>
+    
+    <div class="form-group">
+        <label>Main Artist</label>
+        <input type="text" placeholder="Main artist name">
+    </div>
+
+    <div class="form-group">
+        <label>Featured Artists</label>
+        <input type="text" placeholder="e.g. Artist A, Artist B (leave blank if none)">
+    </div>
+
+    <div class="form-group">
+        <label>Songwriter(s)</label>
+        <input type="text" placeholder="e.g. John Doe, Jane Doe">
+    </div>
+
+    <div class="form-group">
+        <label>Producer(s)</label>
+        <input type="text" placeholder="e.g. Producer Name">
+    </div>
+
+    <div class="form-group">
+        <label>Mixing Engineer</label>
+        <input type="text" placeholder="e.g. Engineer Name (leave blank if none)">
+    </div>
+
+    <div class="form-group">
+        <label>Mastering Engineer</label>
+        <input type="text" placeholder="e.g. Engineer Name (leave blank if none)">
+    </div>
+
+    <div class="form-group">
+        <label>Record Label</label>
+        <input type="text" placeholder="Leave blank if independent">
+    </div>
+
+    <div class="form-group">
+        <label>Copyright Year & Owner</label>
+        <input type="text" placeholder="e.g. 2026 FIREBREED">
+    </div>
+
+</div>
+                <!-- PLATFORMS -->
+                <div class="form-section">
+                    <h2>Select Platforms</h2>
+                    <div class="platforms-grid">
+                        <label class="platform-check">
+                            <input type="checkbox" checked> Spotify
+                        </label>
+                        <label class="platform-check">
+                            <input type="checkbox" checked> Apple Music
+                        </label>
+                        <label class="platform-check">
+                            <input type="checkbox" checked> Tidal
+                        </label>
+                        <label class="platform-check">
+                            <input type="checkbox" checked> Amazon Music
+                        </label>
+                        <label class="platform-check">
+                            <input type="checkbox" checked> YouTube Music
+                        </label>
+                        <label class="platform-check">
+                            <input type="checkbox" checked> Deezer
+                        </label>
+                        <label class="platform-check">
+                            <input type="checkbox"> Beatport
+                        </label>
+                        <label class="platform-check">
+                            <input type="checkbox"> Boomplay
+                        </label>
+                    </div>
+                </div>
+
+                <button class="submit-btn">Submit for Distribution</button>
+
+            </div>
+        </main>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
