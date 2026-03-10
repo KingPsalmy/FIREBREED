@@ -907,3 +907,150 @@ footer ul a:hover {
     outline: none;
     border-color: #ff4500;
 }
+
+.music-filters {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+.filter-btn {
+    background-color: #111111;
+    color: #888888;
+    border: 1px solid #222222;
+    padding: 8px 20px;
+    border-radius: 4px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.filter-btn:hover {
+    border-color: #ff4500;
+    color: white;
+}
+
+.filter-btn.active {
+    background-color: #ff4500;
+    border-color: #ff4500;
+    color: white;
+}
+
+.music-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.music-card {
+    background-color: #111111;
+    border-radius: 8px;
+    padding: 20px;
+    border: 1px solid #222222;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    transition: background-color 0.3s;
+}
+
+.music-card:hover {
+    background-color: #1a1a1a;
+}
+
+.music-art {
+    width: 60px;
+    height: 60px;
+    background-color: #222222;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    flex-shrink: 0;
+}
+
+.music-info {
+    flex: 1;
+}
+
+.music-title {
+    color: white;
+    font-size: 15px;
+    font-weight: 700;
+    margin-bottom: 4px;
+}
+
+.music-meta {
+    color: #888888;
+    font-size: 12px;
+    margin-bottom: 4px;
+}
+
+.music-streams {
+    color: #ff4500;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.music-status {
+    font-size: 11px;
+    font-weight: 700;
+    padding: 4px 12px;
+    border-radius: 20px;
+    letter-spacing: 0.05em;
+}
+
+.music-status.live {
+    background-color: rgba(34, 197, 94, 0.1);
+    color: #22c55e;
+}
+
+.music-status.pending {
+    background-color: rgba(255, 69, 0, 0.1);
+    color: #ff4500;
+}
+
+.music-actions {
+    display: flex;
+    gap: 8px;
+}
+
+.action-btn {
+    background-color: #1a1a1a;
+    color: #888888;
+    border: 1px solid #222222;
+    padding: 6px 14px;
+    border-radius: 4px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.action-btn:hover {
+    border-color: #ff4500;
+    color: white;
+}
+
+.action-btn.danger:hover {
+    border-color: #cc0000;
+    color: #cc0000;
+}
+
+.upload-new-btn {
+    display: inline-block;
+    background-color: #ff4500;
+    color: white;
+    padding: 15px 30px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 700;
+    transition: background-color 0.3s;
+}
+
+.upload-new-btn:hover {
+    background-color: #cc3700;
+}

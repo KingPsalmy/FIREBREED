@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>FIREBREED — My Music</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <div class="dashboard">
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+            <img src="images/logo.png" alt="Firebreed Logo" class="logo">
+            <nav class="sidebar-nav">
+                <a href="dashboard.html">Dashboard</a>
+                <a href="mymusic.html" class="active">My Music</a>
+                <a href="upload.html">Upload</a>
+                <a href="analytics.html">Analytics</a>
+                <a href="royalties.html">Royalties</a>
+                <a href="profile.html">Profile</a>
+            </nav>
+            <a href="index.html" class="logout">Log Out</a>
+        </aside>
+
+        <!-- MAIN CONTENT -->
+        <main class="main-content">
+
+            <div class="dashboard-header">
+                <h1>My Music 🎵</h1>
+                <p>All your releases in one place</p>
+            </div>
+
+            <!-- FILTERS -->
+            <div class="music-filters">
+                <button class="filter-btn active">All</button>
+                <button class="filter-btn">Singles</button>
+                <button class="filter-btn">EPs</button>
+                <button class="filter-btn">Albums</button>
+            </div>
+
+            <!-- MUSIC GRID -->
+            <div class="music-grid">
+
+                <div class="music-card">
+                    <div class="music-art">🎵</div>
+                    <div class="music-info">
+                        <p class="music-title">Track One</p>
+                        <p class="music-meta">Single • Jan 2026</p>
+                        <p class="music-streams">8,204 streams</p>
+                    </div>
+                    <div class="music-status live">Live</div>
+                    <div class="music-actions">
+                        <button class="action-btn">Edit</button>
+                        <button class="action-btn danger">Remove</button>
+                    </div>
+                </div>
+
+                <div class="music-card">
+                    <div class="music-art">🎵</div>
+                    <div class="music-info">
+                        <p class="music-title">Track Two</p>
+                        <p class="music-meta">Single • Feb 2026</p>
+                        <p class="music-streams">10,112 streams</p>
+                    </div>
+                    <div class="music-status live">Live</div>
+                    <div class="music-actions">
+                        <button class="action-btn">Edit</button>
+                        <button class="action-btn danger">Remove</button>
+                    </div>
+                </div>
+
+                <div class="music-card">
+                    <div class="music-art">🎵</div>
+                    <div class="music-info">
+                        <p class="music-title">Track Three</p>
+                        <p class="music-meta">Single • Mar 2026</p>
+                        <p class="music-streams">6,265 streams</p>
+                    </div>
+                    <div class="music-status pending">Pending</div>
+                    <div class="music-actions">
+                        <button class="action-btn">Edit</button>
+                        <button class="action-btn danger">Remove</button>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- UPLOAD NEW -->
+            <a href="upload.html" class="upload-new-btn">+ Upload New Release</a>
+
+        </main>
+    </div>
+
+    <script src="js/config.js"></script>
+    <script type="module" src="js/main.js"></script>
+</body>
+</html>
