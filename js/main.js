@@ -78,3 +78,60 @@ if (labelPlanBtn) {
         window.location.href = 'https://buy.stripe.com/test_4gM00la5226F6Mq2aq7Re01'
     })
 }
+
+// DASHBOARD
+if (window.location.href.includes('dashboard')) {
+    const loadDashboard = async () => {
+        const { data: { user } } = await supabase.auth.getUser()
+
+        if (!user) {
+            window.location.href = 'login.html'
+            return
+        }
+
+        // Update welcome message
+        const welcomeMsg = document.querySelector('.dashboard-header h1')
+        if (welcomeMsg) {
+            welcomeMsg.textContent = `Welcome back, ${user.user_metadata.full_name || 'Artist'} 🔥`
+        }
+
+        // Load releases
+        const { data: releases } = await supabase
+            .from('releases')
+            .select('*')
+            .eq('user_id', user.id)
+
+        if (releases) {
+            // Update releases count
+            const statNumbers = document.querySelectorAll('.stat-number')
+            if (statNumbers[2]) {
+                statNumbers[2].textContent = releases.length
+            }
+
+            // Update total streams
+            const totalStreams = releases.reduce((sum, r) => sum + (r.streams || 0), 0)
+            if (statNumbers[0]) {
+                statNumbers[0].textContent = totalStreams.toLocaleString()
+            }
+
+            // Update recent releases
+            const releasesList = document.querySelector('.releases')
+            if (releasesList && releases.length > 0) {
+                releasesList.innerHTML = releases.map(r => `
+                    <div class="release-item">
+                        <div class="release-art">🎵</div>
+                        <div class="release-info">
+                            <p class="release-title">${r.title}</p>
+                            <p class="release-meta">${r.release_type} • ${r.release_date}</p>
+                        </div>
+                        <div class="release-streams">${(r.streams || 0).toLocaleString()} streams</div>
+                    </div>
+                `).join('')
+            } else if (releasesList) {
+                releasesList.innerHTML = '<p style="color:#888">No releases yet. <a href="upload.html" style="color:#ff4500">Upload your first track!</a></p>'
+            }
+        }
+    }
+
+    loadDashboard()
+}
