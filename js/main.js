@@ -56,7 +56,7 @@ if (signupBtn && window.location.href.includes('login')) {
     })
 }
 
-// STRIPE PAYMENTS
+// PAYSTACK PAYMENTS
 const artistPlanBtn = document.getElementById('artist-plan')
 const labelPlanBtn = document.getElementById('label-plan')
 const freePlanBtn = document.getElementById('free-plan')
@@ -69,13 +69,35 @@ if (freePlanBtn) {
 
 if (artistPlanBtn) {
     artistPlanBtn.addEventListener('click', () => {
-        window.location.href = 'https://buy.stripe.com/test_00w00lgtq6mV4Ei7uK7Re00'
+        const handler = PaystackPop.setup({
+            key: PAYSTACK_PUBLIC_KEY,
+            email: 'customer@email.com',
+            plan: 'PLN_rldpe6fcx1545o5',
+            callback: function(response) {
+                window.location.href = 'dashboard.html'
+            },
+            onClose: function() {
+                alert('Payment cancelled')
+            }
+        })
+        handler.openIframe()
     })
 }
 
 if (labelPlanBtn) {
     labelPlanBtn.addEventListener('click', () => {
-        window.location.href = 'https://buy.stripe.com/test_4gM00la5226F6Mq2aq7Re01'
+        const handler = PaystackPop.setup({
+            key: PAYSTACK_PUBLIC_KEY,
+            email: 'customer@email.com',
+            plan: 'PLN_0hsdfs3dd35nau4',
+            callback: function(response) {
+                window.location.href = 'dashboard.html'
+            },
+            onClose: function() {
+                alert('Payment cancelled')
+            }
+        })
+        handler.openIframe()
     })
 }
 
