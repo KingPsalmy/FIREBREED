@@ -157,3 +157,55 @@ if (window.location.href.includes('dashboard')) {
 
     loadDashboard()
 }
+
+// UPLOAD
+if (window.location.href.includes('upload')) {
+    const submitBtn = document.getElementById('submit-release')
+    
+    if (submitBtn) {
+        submitBtn.addEventListener('click', async () => {
+            const { data: { user } } = await supabase.auth.getUser()
+            
+            if (!user) {
+                window.location.href = 'login.html'
+                return
+            }
+
+            const title = document.getElementById('release-title').value
+            const artistName = document.getElementById('artist-name').value
+            const releaseType = document.getElementById('release-type').value
+            const genre = document.getElementById('genre').value
+            const releaseDate = document.getElementById('release-date').value
+
+            if (!title || !artistName || !releaseDate) {
+                alert('Please fill in Release Title, Artist Name and Release Date')
+                return
+            }
+
+            submitBtn.textContent = 'Submitting...'
+            submitBtn.disabled = true
+
+            const { error } = await supabase
+                .from('releases')
+                .insert({
+                    user_id: user.id,
+                    title: title,
+                    artist_name: artistName,
+                    release_type: releaseType,
+                    genre: genre,
+                    release_date: releaseDate,
+                    status: 'pending',
+                    streams: 0
+                })
+
+            if (error) {
+                alert('Error submitting release: ' + error.message)
+                submitBtn.textContent = 'Submit for Distribution'
+                submitBtn.disabled = false
+            } else {
+                alert('🎉 Release submitted successfully!')
+                window.location.href = 'dashboard.html'
+            }
+        })
+    }
+}
