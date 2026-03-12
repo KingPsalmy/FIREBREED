@@ -2,6 +2,44 @@ import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js
 
 const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY)
 
+// FREE PLAN COUNTER
+const loadFreeSpots = async () => {
+    const { data } = await supabase
+        .from('free_plan_tracker')
+        .select('*')
+        .single()
+
+    if (data) {
+        const spotsRemaining = 10 - data.spots_taken
+        const resetDate = new Date(data.reset_date)
+        const today = new Date()
+        const daysUntilReset = Math.ceil((resetDate - today) / (1000 * 60 * 60 * 24))
+
+        const spotsEl = document.getElementById('spots-remaining')
+        const resetEl = document.getElementById('reset-countdown')
+
+        if (spotsEl) {
+            if (spotsRemaining <= 0) {
+                spotsEl.textContent = 'No spots available'
+                const freeBtn = document.getElementById('free-plan')
+                if (freeBtn) {
+                    freeBtn.textContent = 'Join Waitlist'
+                    freeBtn.disabled = true
+                    freeBtn.style.opacity = '0.5'
+                }
+            } else {
+                spotsEl.textContent = spotsRemaining
+            }
+        }
+
+        if (resetEl) {
+            resetEl.textContent = daysUntilReset > 0 ? daysUntilReset : 0
+        }
+    }
+}
+
+loadFreeSpots()
+
 // SIGN UP
 const signupBtn = document.querySelector('.auth-box button')
 
