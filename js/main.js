@@ -384,3 +384,14 @@ const profile = profiles && profiles[0]
 
     loadProfile()
 }
+
+// HAMBURGER MENU
+const hamburger = document.getElementById('hamburger')
+const navMenu = document.getElementById('nav-menu')
+if (hamburger) {
+    hamburger.addEventListener('click', () => {
+        navMenu.classList.toggle('open')
+        hamburger.classList.toggle('open')
+        hamburger.textContent = navMenu.classList.contains('open') ? '✕' : '☰'
+    })
+}

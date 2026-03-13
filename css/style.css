@@ -1232,6 +1232,16 @@ footer ul a:hover {
     color: white;
     font-size: 24px;
     cursor: pointer;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.hamburger:hover {
+    color: #ff4500;
+}
+
+.hamburger.open {
+    transform: rotate(90deg);
+    color: #ff4500;
 }
 
 @media (max-width: 768px) {
