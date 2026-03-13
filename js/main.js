@@ -2,6 +2,18 @@ import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js
 
 const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY)
 
+// PROTECT DASHBOARD PAGES
+const protectedPages = ['dashboard', 'mymusic', 'upload', 'analytics', 'royalties', 'profile']
+const isProtectedPage = protectedPages.some(page => window.location.href.includes(page))
+
+if (isProtectedPage) {
+    supabase.auth.getUser().then(({ data: { user } }) => {
+        if (!user) {
+            window.location.href = 'login.html'
+        }
+    })
+}
+
 // FREE PLAN COUNTER
 const loadFreeSpots = async () => {
     const { data } = await supabase
@@ -246,4 +258,58 @@ if (window.location.href.includes('upload')) {
             }
         })
     }
+}
+
+// LOGOUT
+const logoutBtn = document.querySelector('.logout')
+if (logoutBtn) {
+    logoutBtn.addEventListener('click', async (e) => {
+        e.preventDefault()
+        await supabase.auth.signOut()
+        window.location.href = 'index.html'
+    })
+}
+
+// MY MUSIC PAGE
+if (window.location.href.includes('mymusic')) {
+    const loadMyMusic = async () => {
+        const { data, error } = await supabase
+            .from('releases')
+            .select('*')
+
+
+        const musicGrid = document.querySelector('.music-grid')
+
+        if (musicGrid) {
+            if (!data || data.length === 0) {
+                musicGrid.innerHTML = `
+                    <div style="color:#888; padding: 40px; text-align:center; grid-column: 1/-1">
+                        <p style="font-size:48px">🎵</p>
+                        <p style="margin-top:10px">No releases yet.</p>
+                        <a href="upload.html" style="color:#ff4500">Upload your first track!</a>
+                    </div>
+                `
+            } else {
+                musicGrid.innerHTML = data.map(r => `
+                    <div class="music-card">
+                        <div class="music-art">🎵</div>
+                        <div class="music-info">
+                            <p class="music-title">${r.title}</p>
+                            <p class="music-meta">${r.release_type} • ${r.release_date}</p>
+                            <p class="music-streams">${(r.streams || 0).toLocaleString()} streams</p>
+                        </div>
+                        <div class="music-status ${r.status === 'live' ? 'live' : 'pending'}">
+                            ${r.status === 'live' ? 'Live' : 'Pending'}
+                        </div>
+                        <div class="music-actions">
+                            <button class="action-btn">Edit</button>
+                            <button class="action-btn danger">Remove</button>
+                        </div>
+                    </div>
+                `).join('')
+            }
+        }
+    }
+
+    loadMyMusic()
 }
