@@ -1143,3 +1143,116 @@ footer ul a:hover {
 .error-btn:hover {
     background-color: #e03e00;
 }
+
+@media (max-width: 768px) {
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+        flex-direction: row;
+        align-items: center;
+        padding: 10px 15px;
+        overflow-x: auto;
+        scrollbar-width: none;
+    }
+
+    .sidebar::-webkit-scrollbar {
+        display: none;
+    }
+
+    .sidebar-nav {
+        flex-direction: row;
+        gap: 8px;
+        margin-top: 0;
+        overflow-x: auto;
+        flex-shrink: 0;
+        scrollbar-width: none;
+    }
+
+    .sidebar-nav::-webkit-scrollbar {
+        display: none;
+    }
+
+    .sidebar-nav a {
+        font-size: 0;
+        padding: 8px 10px;
+        white-space: nowrap;
+    }
+
+    .sidebar-nav a::before {
+        font-size: 18px;
+    }
+
+    .sidebar-nav a[href="dashboard.html"]::before { content: "🏠"; }
+    .sidebar-nav a[href="mymusic.html"]::before { content: "🎵"; }
+    .sidebar-nav a[href="upload.html"]::before { content: "⬆️"; }
+    .sidebar-nav a[href="analytics.html"]::before { content: "📊"; }
+    .sidebar-nav a[href="royalties.html"]::before { content: "💰"; }
+    .sidebar-nav a[href="profile.html"]::before { content: "👤"; }
+
+    .logout {
+        position: relative;
+        bottom: auto;
+        left: auto;
+        right: auto;
+        border-top: none;
+        white-space: nowrap;
+        margin-top: 0;
+        padding: 8px 12px;
+        font-size: 0;
+    }
+
+    .logout::before {
+        content: "🚪";
+        font-size: 18px;
+    }
+
+    .main-content {
+        margin-left: 0;
+        padding: 20px 15px;
+    }
+
+    .dashboard {
+        flex-direction: column;
+    }
+
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .logo {
+        height: 35px;
+    }
+}
+
+.hamburger {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .hamburger {
+        display: block;
+    }
+
+    nav ul {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        right: 0;
+        background-color: #111111;
+        padding: 20px;
+        gap: 15px;
+        z-index: 100;
+    }
+
+    nav ul.open {
+        display: flex;
+    }
+}
