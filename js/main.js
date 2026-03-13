@@ -273,12 +273,19 @@ if (logoutBtn) {
 // MY MUSIC PAGE
 if (window.location.href.includes('mymusic')) {
     const loadMyMusic = async () => {
+        // Show loading spinner
+        const musicGrid = document.querySelector('.music-grid')
+        if (musicGrid) {
+            musicGrid.innerHTML = `
+                <div class="loading">
+                    <div class="spinner"></div>
+                </div>
+            `
+        }
+
         const { data, error } = await supabase
             .from('releases')
             .select('*')
-
-
-        const musicGrid = document.querySelector('.music-grid')
 
         if (musicGrid) {
             if (!data || data.length === 0) {
