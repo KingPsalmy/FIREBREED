@@ -313,3 +313,67 @@ if (window.location.href.includes('mymusic')) {
 
     loadMyMusic()
 }
+
+// PROFILE PAGE
+if (window.location.href.includes('profile')) {
+    const loadProfile = async () => {
+        const { data: { session } } = await supabase.auth.getSession()
+        if (!session) { window.location.href = 'login.html'; return }
+        
+        const user = session.user
+
+        // Load existing profile
+        const { data: profiles } = await supabase
+    .from('profiles')
+    .select('*')
+    .eq('id', user.id)
+
+const profile = profiles && profiles[0]
+
+        // Fill in form fields if profile exists
+        if (profile) {
+            const fields = {
+                'artist-name': profile.artist_name,
+                'real-name': profile.full_name,
+                'email': profile.email,
+            }
+            Object.entries(fields).forEach(([id, value]) => {
+                const el = document.getElementById(id)
+                if (el && value) el.value = value
+            })
+        }
+
+        // Save profile
+        const saveBtn = document.querySelector('.submit-btn')
+        if (saveBtn) {
+            saveBtn.addEventListener('click', async () => {
+                const artistName = document.getElementById('artist-name')?.value
+                const fullName = document.getElementById('real-name')?.value
+                const email = document.getElementById('email')?.value
+
+                saveBtn.textContent = 'Saving...'
+                saveBtn.disabled = true
+
+                const { error } = await supabase
+                    .from('profiles')
+                    .upsert({
+                        id: user.id,
+                        artist_name: artistName,
+                        full_name: fullName,
+                        email: email,
+                    })
+
+                if (error) {
+                    alert('Error saving profile: ' + error.message)
+                } else {
+                    alert('✅ Profile saved successfully!')
+                }
+
+                saveBtn.textContent = 'Save Changes'
+                saveBtn.disabled = false
+            })
+        }
+    }
+
+    loadProfile()
+}
